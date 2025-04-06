@@ -1,1 +1,22 @@
+name: Automated Testing
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+    - name: Run Tests
+      run: |
+        python3 find_lowest_number.py test_data/test1_input.txt test_data/test1_output.txt
+        diff test_data/test1_output.txt test_data/test1_expected.txt
 

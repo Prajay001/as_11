@@ -1,4 +1,4 @@
-name: Automated Testing
+name: Test find_lowest_number.py
 
 on: [push]
 
